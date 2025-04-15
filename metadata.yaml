@@ -1,5 +1,5 @@
 name: astrbot_plugin_gotify # 这是你的插件的唯一识别名。
 desc: 该插件可以监听gotify的信息，并转发给你的机器人 # 插件简短描述
-version: v0.1 # 插件版本号。格式：v1.1.1 或者 v1.1
+version: v1.0 # 插件版本号。格式：v1.1.1 或者 v1.1
 author: BetaCat # 作者
 repo: https://github.com/BetaCatX/astrbot_plugin_gotify # 插件的仓库地址
