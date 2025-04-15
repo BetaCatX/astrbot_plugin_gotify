@@ -1,8 +1,9 @@
-# helloworld
+# astrbot_plugin_gotify
 
-AstrBot 插件模板
+## 介绍
 
-A template plugin for AstrBot plugin feature
+此插件可以监听Gotify的消息，并推送给你的机器人
+
 
 # 支持
 
