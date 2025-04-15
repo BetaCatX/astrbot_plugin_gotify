@@ -84,14 +84,13 @@ class MyPlugin(Star):
 
     @filter.command("gotify_register")
     async def helloworld(self, event: AstrMessageEvent):
-        logger.info(f"当前的chat_id:{event.unified_msg_origin}")
+        logger.info(f"当前会话的chat_id:{event.unified_msg_origin}")
         self.chat_id.append(event.unified_msg_origin)
         self.chat_id = list(set(self.chat_id))  # 去重
-        logger.info(f"当前的chat_id:{self.chat_id}")
         self.config["chat_id"] = self.chat_id
+        logger.info(f"所有已注册的chat_id:{self.chat_id}")
         self.config.save_config()
-        logger.info(f"当前config:{self.config}，已保存到配置文件中")
-        yield event.stop_event()
+        yield event.plain_result("当前会话注册成功！")
 
     async def terminate(self):
         """可选择实现异步的插件销毁方法，当插件被卸载/停用时会调用。"""
