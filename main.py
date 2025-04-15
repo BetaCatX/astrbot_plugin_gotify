@@ -1,5 +1,6 @@
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
+from astrbot.api.event.filter import PermissionType
 from astrbot.api import logger
 from astrbot.api import AstrBotConfig
 from gotify import AsyncGotify
@@ -82,6 +83,7 @@ class MyPlugin(Star):
                 await asyncio.sleep(60)  # 等待 1 分钟后重连
         pass
 
+    @filter.permission_type(PermissionType.ADMIN)
     @filter.command("gotify_register")
     async def helloworld(self, event: AstrMessageEvent):
         logger.info(f"当前会话的chat_id:{event.unified_msg_origin}")
