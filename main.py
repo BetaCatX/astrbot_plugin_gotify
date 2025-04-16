@@ -14,7 +14,7 @@ from astrbot.core.message.message_event_result import MessageChain
     "astrbot_plugin_gotify",
     "BetaCat",
     "此插件可以监听Gotify的消息，并推送给你的机器人",
-    "1.0.0",
+    "1.0.1",
 )
 class MyPlugin(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
@@ -30,8 +30,6 @@ class MyPlugin(Star):
         )
 
         self.cache_app = {}  # dict{id: application}
-
-        print(self.__dict__)
 
     async def update_applications(self):
         """更新应用列表"""
